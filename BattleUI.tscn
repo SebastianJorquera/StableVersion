@@ -1,0 +1,246 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Born2bSportyV2.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 41
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 34
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Born2bSportyV2.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 9
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 58
+font_data = ExtResource( 1 )
+
+[node name="BattleUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -565, 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuOptions" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -144.0
+margin_right = -4.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MenuOptions"]
+margin_right = 1018.0
+margin_bottom = 145.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuOptions/Panel"]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 1010.0
+margin_bottom = 137.0
+grow_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MenuOptions/Panel/MarginContainer"]
+visible = false
+margin_right = 1001.0
+margin_bottom = 128.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuOptions/Panel/MarginContainer"]
+margin_right = 1001.0
+margin_bottom = 128.0
+rect_min_size = Vector2( -3, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.19
+
+[node name="Button" type="Button" parent="MenuOptions/Panel/MarginContainer/HBoxContainer"]
+margin_right = 174.051
+margin_bottom = 128.0
+rect_min_size = Vector2( 174.051, 0 )
+text = "ARGUE"
+
+[node name="Control" type="Control" parent="MenuOptions/Panel/MarginContainer/HBoxContainer"]
+margin_left = 178.0
+margin_right = 766.967
+margin_bottom = 128.0
+rect_min_size = Vector2( 588.967, 0 )
+
+[node name="Button2" type="Button" parent="MenuOptions/Panel/MarginContainer/HBoxContainer"]
+margin_left = 770.0
+margin_right = 1000.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 230, 0 )
+text = "Propositions"
+
+[node name="ARGUEoptions" type="MarginContainer" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -144.0
+margin_right = -4.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ARGUEoptions"]
+margin_right = 1018.0
+margin_bottom = 145.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="ARGUEoptions/Panel"]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 1010.0
+margin_bottom = 137.0
+grow_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ARGUEoptions/Panel/MarginContainer"]
+margin_right = 1001.0
+margin_bottom = 128.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ARGUEoptions/Panel/MarginContainer/Panel"]
+anchor_left = 0.001
+anchor_right = 0.244
+anchor_bottom = 0.078
+margin_left = -0.00100005
+margin_right = 740.756
+margin_bottom = 39.016
+rect_scale = Vector2( 1.01616, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer"]
+margin_right = 221.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 221, 49 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer/Button"]
+anchor_right = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -1.006
+margin_bottom = 49.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer"]
+margin_left = 225.0
+margin_right = 775.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 550, 0 )
+
+[node name="Button2" type="Button" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer"]
+margin_left = 779.0
+margin_right = 982.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 203, 49 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer/Button2"]
+margin_right = 203.0
+margin_bottom = 48.0
+rect_scale = Vector2( 0.994911, 1.01738 )
+custom_fonts/mono_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "Maybe"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ARGUEoptions/Panel/MarginContainer/Panel"]
+margin_left = 2.0
+margin_top = 78.0
+margin_right = 1002.0
+margin_bottom = 127.0
+rect_min_size = Vector2( 899, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer2"]
+margin_right = 225.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 225, 49 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer2/Button"]
+margin_right = 223.0
+margin_bottom = 50.0
+custom_fonts/normal_font = SubResource( 7 )
+text = "NO"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer2"]
+margin_left = 229.0
+margin_right = 786.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 557, 45 )
+
+[node name="Button2" type="Button" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer2"]
+margin_left = 790.0
+margin_right = 996.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 206, 48 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ARGUEoptions/Panel/MarginContainer/Panel/HBoxContainer2/Button2"]
+margin_right = 206.0
+margin_bottom = 48.0
+custom_fonts/mono_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 9 )
+text = "...."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

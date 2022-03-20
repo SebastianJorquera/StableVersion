@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://addons/dialogic/Dialog.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -1, 0 )
+script = ExtResource( 1 )
+
+[node name="Dialog" parent="." instance=ExtResource( 2 )]
+margin_left = 294.0
+margin_top = 390.0
+margin_right = 456.0
+margin_bottom = 489.0
+timeline = "timeline-1645544485.json"
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[node name="TileMap2" type="TileMap" parent="."]
+format = 1
+
+[node name="TileMap3" type="TileMap" parent="."]
+format = 1
+
+[node name="TileMap4" type="TileMap" parent="."]
+cell_size = Vector2( 32, 32 )
+format = 1
