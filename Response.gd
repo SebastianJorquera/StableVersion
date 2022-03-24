@@ -1,15 +1,20 @@
 extends MarginContainer
-
+var dialogNum = 0
 var dialog = [
 	'Hello there, this tutorial is awesome.',
 	'If you like what you see, you can click the subscribe button',
 	'and if you don\'t you shoud do it anyway!'
 ]
 
+	
+
 var dialog_index = 0
 var finished = false
 
 func _ready():
+	if (dialogNum == 1):
+		dialog = [ "Maybe","It seems you're a bit confused. Let me elaborate further.", ""]
+	
 	load_dialog()
 
 func _process(delta):
