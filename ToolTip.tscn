@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ToolTip.gd" type="Script" id=1]
+
+[node name="ToolTip" type="Popup"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 300, 200 )
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="M" type="MarginContainer" parent="N"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="N/M"]
+margin_right = 300.0
+margin_bottom = 185.0
+mouse_filter = 2
+
+[node name="V" type="VBoxContainer" parent="N/M"]
+margin_right = 300.0
+margin_bottom = 185.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="N/M/V"]
+margin_right = 300.0
+margin_bottom = 14.0
+
+[node name="ItemName" type="Label" parent="N/M/V"]
+margin_top = 18.0
+margin_right = 300.0
+margin_bottom = 32.0
+text = "<ItemName>"
+align = 1
+
+[node name="Description" type="Label" parent="N/M/V"]
+margin_top = 36.0
+margin_right = 300.0
+margin_bottom = 50.0
+text = "<Description>"
+align = 1
