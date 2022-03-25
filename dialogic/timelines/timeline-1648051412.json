@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"character": "character-1648051373.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "There is ONE Cactus at the start"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.2
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4",
+		"file": "timeline-1648051412.json",
+		"name": "timeline-1"
+	}
+}

@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GroundTileset00.tres" type="TileSet" id=2]
+[ext_resource path="res://item_icons/Test.png" type="Texture" id=3]
+[ext_resource path="res://Sky.png" type="Texture" id=4]
+[ext_resource path="res://Hazard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://keyboard_key_z.png" type="Texture" id=6]
+[ext_resource path="res://Area2D.gd" type="Script" id=7]
+[ext_resource path="res://Inventory.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UserInterface.gd" type="Script" id=9]
+[ext_resource path="res://PauseMenu.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25, 12.6875 )
+
+[node name="Stage_One" type="Node2D"]
+
+[node name="Proposition" type="Area2D" parent="."]
+position = Vector2( 1329, 204 )
+collision_layer = 4
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Proposition"]
+position = Vector2( 0, 8 )
+scale = Vector2( 0.0168421, 0.0168421 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Proposition"]
+position = Vector2( 1, 7.6875 )
+shape = SubResource( 1 )
+
+[node name="KeyInput" type="Sprite" parent="Proposition"]
+position = Vector2( 1, -20 )
+scale = Vector2( 0.0585938, 0.0585938 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 300 )
+jump_height = 150.0
+jump_time_to_peak = 0.7
+jump_time_to_descent = 0.5
+max_speed = 130.0
+acceleration = 50.0
+friction_percent = 0.2
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 15
+format = 1
+tile_data = PoolIntArray( 131101, 1, 0, 131102, 1, 0, 196612, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196642, 1, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 196646, 1, 0, 262145, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262158, 0, 0, 262169, 1, 0, 262170, 1, 0, 327680, 0, 0, 327681, 5, 0, 327684, 1, 0, 327685, 1, 0, 393216, 4, 0, 393217, 5, 0, 393228, 1, 0, 393234, 0, 0, 393235, 1, 0, 393243, 1, 0, 393244, 1, 0, 393245, 1, 0, 458752, 4, 0, 458753, 5, 0, 458761, 1, 0, 458762, 1, 0, 458766, 1, 0, 458767, 1, 0, 458770, 4, 0, 458771, 5, 0, 458772, 1, 0, 458783, 1, 0, 458784, 1, 0, 458793, 0, 0, 524288, 4, 0, 524289, 5, 0, 524294, 0, 0, 524306, 4, 0, 524307, 5, 0, 524323, 1, 0, 524324, 1, 0, 524329, 8, 0, 589824, 4, 0, 589825, 5, 0, 589829, 0, 0, 589830, 5, 0, 589842, 4, 0, 589843, 5, 0, 589846, 1, 0, 589847, 1, 0, 589865, 8, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 655390, 1, 0, 655391, 1, 0, 655392, 1, 0, 655393, 1, 0, 655394, 1, 0, 655395, 1, 0, 655396, 1, 0, 655397, 1, 0, 655398, 1, 0, 655399, 1, 0, 655400, 1, 0, 655401, 1, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.5, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
+position = Vector2( 320, 175.5 )
+scale = Vector2( 1.66667, 2.17901 )
+texture = ExtResource( 4 )
+
+[node name="Hazard" parent="." instance=ExtResource( 5 )]
+position = Vector2( 552, 294 )
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 9 )
+
+[node name="Inventory" parent="UserInterface" instance=ExtResource( 8 )]
+pause_mode = 2
+position = Vector2( 192, 80 )
+
+[node name="PauseMenu" type="Control" parent="UserInterface"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="UserInterface/PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.454902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="UserInterface/PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/PauseMenu/CenterContainer"]
+margin_left = 267.0
+margin_top = 125.0
+margin_right = 373.0
+margin_bottom = 235.0
+custom_constants/separation = 9
+
+[node name="Label" type="Label" parent="UserInterface/PauseMenu/CenterContainer/VBoxContainer"]
+margin_right = 106.0
+margin_bottom = 14.0
+text = "Pause Menu"
+align = 1
+valign = 1
+
+[node name="Resume" type="Button" parent="UserInterface/PauseMenu/CenterContainer/VBoxContainer"]
+margin_top = 23.0
+margin_right = 106.0
+margin_bottom = 43.0
+text = "Resume Game"
+
+[node name="Quit" type="Button" parent="UserInterface/PauseMenu/CenterContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 106.0
+margin_bottom = 72.0
+text = "Quit Game"
+
+[node name="Space" type="Control" parent="UserInterface/PauseMenu/CenterContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 106.0
+margin_bottom = 81.0
+
+[node name="Inventory" type="Button" parent="UserInterface/PauseMenu/CenterContainer/VBoxContainer"]
+margin_top = 90.0
+margin_right = 106.0
+margin_bottom = 110.0
+text = "Inventory"
+
+[connection signal="pressed" from="UserInterface/PauseMenu/CenterContainer/VBoxContainer/Resume" to="UserInterface" method="_on_Resume_pressed"]
+[connection signal="pressed" from="UserInterface/PauseMenu/CenterContainer/VBoxContainer/Quit" to="UserInterface" method="_on_Quit_pressed"]
+[connection signal="pressed" from="UserInterface/PauseMenu/CenterContainer/VBoxContainer/Inventory" to="UserInterface" method="_on_Inventory_pressed"]
